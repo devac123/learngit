@@ -1,0 +1,7 @@
+change last commit message
+git commit --amend -m "change 102 conflict resolved check ammend" 
+
+push code with changed commit message
+git push -f origin 102
+
+

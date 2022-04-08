@@ -1,0 +1,18 @@
+If we want get ure from image field in paragrapg
+
+{% for item in paragraph.field_list_items if key|first != '#' %}
+              <li>
+                {% set image_field = item.entity.field_icons.entity.uri.value %}
+                {% if image_field is not empty %}
+                  {% set image_url = file_url(image_field) %}
+                {% else %}
+                  {% set image_url = '' %}
+                {% endif %}
+                {% if image_url is not empty %}
+                  <img src="{{ image_url }}">
+                {% endif %}
+                {% if item.entity.field_description.value is not empty %}
+                  {{ item.entity.field_description.value|raw }}
+                {% endif %}
+              </li>
+            {% endfor %}
